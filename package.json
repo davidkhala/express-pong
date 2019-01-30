@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/davidkhala/express-pong#readme",
   "dependencies": {
-    "khala-nodeutils": "^0.2.9"
+    "khala-nodeutils": "^0.3.3"
   }
 }
