@@ -4,7 +4,6 @@
   "description": "minimum ping-pong server",
   "scripts": {
     "start": "node app",
-    "https": "node https/app"
   },
   "repository": {
     "type": "git",
