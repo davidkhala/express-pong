@@ -1,22 +1,11 @@
-const grpc = require('grpc');
+const {grpcRequest} = require('khala-grpc');
 const path = require('path');
-const pingProtoPath = path.resolve(__dirname, 'ping.proto');
+const protoPath = path.resolve(__dirname, 'ping.proto');
 
-const PingService = grpc.load(pingProtoPath).PingService;
 const url = 'localhost:80';
-const client = new PingService(url, grpc.credentials.createInsecure());
 
 const ping = async () => {
-	return new Promise((resolve, reject) => {
-		client.Ping({}, (err, res) => {
-			if (err) {
-				console.error(err);
-				reject(err);
-			} else {
-				console.info(res);
-				resolve(res);
-			}
-		});
-	});
+	const result = await grpcRequest(protoPath, 'PingService', url, 'Ping', {});
+	console.log('ping', result);
 };
 ping();
