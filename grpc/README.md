@@ -10,3 +10,4 @@
 - //单行注释。
 - npm grpc: size 43M
 - import package 包名需要与目录结构契合 
+- Can't add a service to a started server.
