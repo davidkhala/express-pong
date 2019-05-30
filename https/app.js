@@ -15,3 +15,8 @@ app.get('/', (req, res) => {
 	console.info('get ping');
 	res.send('pong from server');
 });
+
+app.post('/post', (req, res) => {
+	console.info(req.url, 'req.body', req.body);
+	res.json(req.body);
+});
