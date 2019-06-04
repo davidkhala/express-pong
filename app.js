@@ -1,4 +1,5 @@
-const {run} = require('khala-nodeutils').baseApp();
+const nodeUtils = require('khala-nodeutils');
+const {run} = nodeUtils.baseApp();
 const port = process.env.port ? process.env.port : 80;
 const {app} = run(port);
 app.get('/', (req, res) => {
@@ -13,12 +14,7 @@ app.post('/post', (req, res) => {
 app.get('/err', (req) => {
 	throw Error(req.url);
 });
-
-//router.post('/createOrUpdateOrg', multerCache.fields([{name: 'admins'}, {name: 'root_certs'}, {name: 'tls_root_certs'}])
-app.post('/formData', (req, res) => {
-
-	res.json({formData})
-});
+app.use('/formData', require('./formDataRouter'));
 
 //error Handle middleware is order sensitive
 app.use((err, req, res, next) => {
