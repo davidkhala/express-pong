@@ -1,0 +1,12 @@
+language: node_js
+services:
+  - docker
+node_js:
+  - "10"
+dist: bionic
+install:
+  - npm install pm2@latest -g
+script:
+  - pm2 start grpc/app.js --name grpcServer
+  - node grpc/test/ping.js
+
