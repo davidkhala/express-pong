@@ -1,6 +1,7 @@
 # express-pong
 nothing but a node server response ping.
 
+[![Build Status](https://travis-ci.com/davidkhala/express-pong.svg?branch=master)](https://travis-ci.com/davidkhala/express-pong)
 
 ## Notes
 - ICMP has no ports and is neither TCP nor UDP. 
