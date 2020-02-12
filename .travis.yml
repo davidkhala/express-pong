@@ -6,6 +6,8 @@ node_js:
 dist: bionic
 install:
   - npm install pm2@latest -g
+  - npm install
+  - cd grpc; npm install
 script:
   - pm2 start grpc/app.js --name grpcServer
   - node grpc/test/ping.js
