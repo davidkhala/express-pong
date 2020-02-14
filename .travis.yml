@@ -9,6 +9,8 @@ install:
   - npm install
   - cd grpc; npm install; cd $TRAVIS_BUILD_DIR
 script:
-  - pm2 start grpc/app.js --name grpcServer
-  - node grpc/test/ping.js
+  - port=3000 pm2 start app.js --name http
+  - curl localhost:3000
+  - port=9090 pm2 start grpc/app.js --name grpc
+  - port=9090 node grpc/test/ping.js
 
