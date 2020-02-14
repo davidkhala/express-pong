@@ -2,10 +2,10 @@ const {grpcServer, load} = require('khala-grpc');
 const path = require('path');
 const pingProtoPath = path.resolve(__dirname, 'ping.proto');
 const {PingService: {service}} = load(pingProtoPath).object;
-const port = process.env.port ? process.env.port : 9090;
+const port = process.env.port || 9090;
+const host = process.env.host || 'localhost';
 
-
-const baseUrl = `localhost:${port}`;
+const baseUrl = `${host}:${port}`;
 const services = [{
 	service,
 	implementation: {
