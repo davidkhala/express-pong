@@ -17,4 +17,4 @@ const services = [{
 grpcServer({port}, services);
 
 
-console.log(`Server running at ${baseUrl}`);
+console.log(`Server running at`, {port});
