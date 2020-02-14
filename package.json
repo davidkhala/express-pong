@@ -1,25 +1,25 @@
 {
   "name": "pong",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "minimum ping-pong server",
   "scripts": {
     "start": "node app"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/davidkhala/express-pong.git"
+    "url": "github.com/davidkhala/express-pong"
   },
   "keywords": [
     "expressJS",
     "nodejs"
   ],
   "author": "davidliu",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/davidkhala/express-pong/issues"
   },
   "homepage": "https://github.com/davidkhala/express-pong#readme",
   "dependencies": {
-    "khala-nodeutils": "^0.5.0"
+    "khala-nodeutils": "^0.7.11"
   }
 }

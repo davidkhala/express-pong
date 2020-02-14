@@ -15,3 +15,4 @@ UDP and TCP have ports, ICMP has no ports,
 - try "axios": "^0.18.0" 
 - https: try to enable clientAuth, 
     - const tlsOptions = {requestCert: true, rejectUnauthorized:true};
+- push a docker image

@@ -1,5 +1,4 @@
-const nodeUtils = require('khala-nodeutils');
-const {run} = nodeUtils.baseApp();
+const {run} = require('khala-nodeutils/baseApp');
 const port = process.env.port ? process.env.port : 80;
 const {app} = run(port);
 app.get('/', (req, res) => {
