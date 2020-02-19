@@ -8,6 +8,7 @@ install:
   - npm install pm2@latest -g
   - npm install
   - cd grpc; npm install; cd $TRAVIS_BUILD_DIR
+  - ping -c 3 localhost
 script:
   - port=3000 pm2 start app.js --name http
   - curl localhost:3000
