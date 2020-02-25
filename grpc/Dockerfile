@@ -7,4 +7,4 @@ COPY . .
 
 RUN npm install
 
-EXPOSE 2020
+EXPOSE 9090
