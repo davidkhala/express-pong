@@ -2,6 +2,12 @@
   "name": "grpc-pong",
   "version": "0.0.0",
   "dependencies": {
-    "khala-grpc": "^0.1.0"
+    "khala-grpc": "latest"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "devDependencies": {
+    "mocha": "latest"
   }
 }

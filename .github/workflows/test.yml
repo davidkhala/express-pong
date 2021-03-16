@@ -18,8 +18,8 @@ jobs:
       - run: cd grpc; npm install;
       - run: ping -c 3 localhost
       - run: port=3000 pm2 start app.js --name http
-      - run: curl localhost:3000
       - run: port=9090 pm2 start grpc/app.js --name grpc
-      - run: port=9090 node grpc/test
+      - run: curl localhost:3000
+      - run: cd grpc; npm test
 
 

@@ -12,7 +12,6 @@ UDP and TCP have ports, ICMP has no ports,
    - `secureProtocol` The TLS protocol version to use. The possible values are listed as [SSL_METHODS](https://www.openssl.org/docs/man1.1.0/man7/ssl.html#Dealing-with-Protocol-Methods), use the function names as strings. It is not recommended to use TLS versions less than 1.2. Default: none, see minVersion.
  
 ## TODO
-- try "axios": "^0.18.0" 
 - https: try to enable clientAuth, 
     - const tlsOptions = {requestCert: true, rejectUnauthorized:true};
 - push a docker image
