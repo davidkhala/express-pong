@@ -1,6 +1,6 @@
 {
   "name": "express-pongs",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "dependencies": {
     "khala-nodeutils": "latest"
   },
@@ -8,7 +8,7 @@
     "test": "mocha test"
   },
   "bin": {
-    "pong-https": "node app.js"
+    "pong-https": "app.js"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,6 @@
 {
   "name": "express-pong",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "minimum ping-pong server",
   "repository": {
     "type": "git",
@@ -20,7 +20,7 @@
     "test": "mocha test"
   },
   "bin": {
-    "pong-http": "node app.js"
+    "pong-http": "app.js"
   },
   "dependencies": {
     "khala-nodeutils": "latest"
