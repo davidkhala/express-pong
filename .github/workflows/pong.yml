@@ -40,10 +40,18 @@ jobs:
       - run: port=9090 pm2 start app.js --name grpc
       - run: npm test
   https:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     defaults:
       run:
         working-directory: https
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [8.x, 10.x, 12.x, 14.x]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install pm2@latest -g
+      - run: npm i
+      - run: npm test

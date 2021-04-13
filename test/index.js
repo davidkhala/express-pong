@@ -2,12 +2,11 @@ const {execSync} = require('child_process')
 const {axiosPromise} = require('khala-axios')
 const {sleep} = require('khala-light-util')
 const assert = require('assert')
-describe('http', () => {
+describe('http', function () {
+    this.timeout(3000)
     const port = 3000
     before(async () => {
         execSync('pm2 --version')
-        execSync('pm2 show http >/dev/null')
-
         try {
             execSync('pm2 delete http')
         } catch (e) {

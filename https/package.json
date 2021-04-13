@@ -1,0 +1,19 @@
+{
+  "name": "express-pongs",
+  "version": "0.0.0",
+  "dependencies": {
+    "khala-nodeutils": "latest"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/davidkhala/express-pong"
+  },
+  "devDependencies": {
+    "khala-axios": "latest",
+    "mocha": "latest-6",
+    "khala-light-util": "latest"
+  }
+}

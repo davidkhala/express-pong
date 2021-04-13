@@ -1,14 +1,18 @@
 #!/usr/bin/env node
-const path = require('path');
 const {run} = require('khala-nodeutils/baseApp');
 const port = process.env.port || 443;
 
-const key = path.resolve(__dirname, './key.pem');
-const cert = path.resolve(__dirname, './cert.pem');
-
-const secureProtocol = 'TLSv1_2_method';
-const minVersion = ['TLSv1.2', 'TLSv1.1', 'TLSv1'][0]; // NOTE: only work for nodejs 11+
-const tlsOptions = {key, cert, ca: cert, secureProtocol};
+const {key, cert} = process.env
+const tlsOptions = {key, cert, ca: cert};
+if (process.version.match(/^(v10\.|v12\.|v14\.)/)) {
+    const minVersion = 'TLSv1.2'
+    Object.assign(tlsOptions, {minVersion})
+    console.info('use minVersion', minVersion)
+} else if (process.version.match(/^v8./)) {
+    const secureProtocol = 'TLSv1_method';
+    Object.assign(tlsOptions, {secureProtocol})
+    console.info('use secureProtocol', secureProtocol)
+}
 
 const {app} = run(port, undefined, tlsOptions);
 app.get('/', (req, res) => {
