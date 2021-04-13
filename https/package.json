@@ -7,6 +7,9 @@
   "scripts": {
     "test": "mocha test"
   },
+  "bin": {
+    "pong-https": "node app.js"
+  },
   "repository": {
     "type": "git",
     "url": "github.com/davidkhala/express-pong"
