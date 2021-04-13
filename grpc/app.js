@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const {grpcServer, load} = require('khala-grpc');
 const path = require('path');
 const pingProtoPath = path.resolve(__dirname, 'ping.proto');
@@ -10,7 +11,7 @@ const services = [{
 		ping: (req, callBack) => {
 			console.log(req);
 			const err = undefined;
-			callBack(err, {data: 'pong from server', errCode: 'success'});
+			callBack(err, {data: 'pong', errCode: 'success'});
 		}
 	}
 }];

@@ -1,10 +1,7 @@
 {
-  "name": "pong",
-  "version": "1.1.0",
+  "name": "express-pong",
+  "version": "1.2.0",
   "description": "minimum ping-pong server",
-  "scripts": {
-    "start": "node app"
-  },
   "repository": {
     "type": "git",
     "url": "github.com/davidkhala/express-pong"
@@ -19,7 +16,19 @@
     "url": "https://github.com/davidkhala/express-pong/issues"
   },
   "homepage": "https://github.com/davidkhala/express-pong#readme",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "bin": {
+    "pong-http": "node app.js",
+    "pong-https": "node https/app.js"
+  },
   "dependencies": {
     "khala-nodeutils": "latest"
+  },
+  "devDependencies": {
+    "khala-axios": "latest",
+    "mocha": "latest",
+    "khala-light-util": "latest"
   }
 }

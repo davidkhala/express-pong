@@ -1,6 +1,5 @@
 # express-pong
 nothing but a node server response ping.
-
 [![server-client test](https://github.com/davidkhala/express-pong/actions/workflows/test.yml/badge.svg)](https://github.com/davidkhala/express-pong/actions/workflows/test.yml)
 
 ## Notes
