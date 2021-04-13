@@ -1,6 +1,6 @@
 {
   "name": "express-pong",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "minimum ping-pong server",
   "repository": {
     "type": "git",
