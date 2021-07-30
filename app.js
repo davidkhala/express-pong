@@ -15,7 +15,7 @@ const port = process.env.port || 80;
 
 const {app} = run(port);
 app.get('/', (req, res) => {
-    console.info(`\n from ${req.ips}`);
+    console.info(`\n from ${req.ip}`);
     res.send('pong\n');
 });
 require('./extensions')(app, process.env.extensions)
