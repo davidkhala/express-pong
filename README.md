@@ -3,9 +3,15 @@ nothing but a node server response ping.
 
 [![test](https://github.com/davidkhala/express-pong/actions/workflows/pong.yml/badge.svg)](https://github.com/davidkhala/express-pong/actions/workflows/pong.yml)
 
+## Run
+
+### As Docker container
+``` 
+export exposedPort=<exposed-port>
+docker run -p ${exposedPort}:${exposedPort} -e port=${exposedPort} ghcr.io/davidkhala/express-pong
+```
+
 ## Notes
-- [Nodejs8] EOL: not supported in Ubuntu 20
-    - `TLS_method` is Unknown method for `secureProtocol`
 - ICMP has no ports and is neither TCP nor UDP. 
 > ICMP is IP protocol 1 (see RFC792), TCP is IP protocol 6 (described in RFC793) and UDP is IP protocol 17(see RFC768). 
 UDP and TCP have ports, ICMP has no ports,
