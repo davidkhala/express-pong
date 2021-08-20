@@ -10,6 +10,8 @@ nothing but a node server response ping.
 export exposedPort=<exposed-port>
 docker run -p ${exposedPort}:${exposedPort} -e port=${exposedPort} ghcr.io/davidkhala/express-pong
 ```
+### As node process
+`port=<exposed-port> node app.js`
 
 ## Notes
 - ICMP has no ports and is neither TCP nor UDP. 
