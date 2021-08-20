@@ -41,7 +41,7 @@ describe('https', function () {
 	});
 
 	after(async () => {
-		// await pm2.delete(name);
+		await pm2.delete(name);
 		pm2.disconnect();
 	});
 
