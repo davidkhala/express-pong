@@ -52,7 +52,4 @@ jobs:
         with:
           node-version: 14.x
       - run: npm i
-      - run: npm install forever -g
-      - run: key=$PWD/key.pem cert=$PWD/cert.pem port=3443 forever start index.js
-        working-directory: https/test
       - run: npm test
