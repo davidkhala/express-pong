@@ -39,8 +39,6 @@ jobs:
       - run: port=9090 pm2 start app.js --name grpc
       - run: npm test
   https:
-    env:
-      NODE_OPTIONS: --max_old_space_size=4096
     strategy:
       matrix:
         os-version: [ ubuntu-latest, macos-latest ]
@@ -54,4 +52,7 @@ jobs:
         with:
           node-version: 14.x
       - run: npm i
+      - run: npm install forever -g
+      - run: key=$PWD/key.pem cert=$PWD/cert.pem port=3443 forever start index.js
+        working-directory: https/test
       - run: npm test
