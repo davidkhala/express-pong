@@ -10,47 +10,46 @@ jobs:
   http:
     strategy:
       matrix:
-        node-version: [14.x]
-    runs-on: ubuntu-latest
+        os-version: [ ubuntu-latest, macos-latest ]
+    runs-on: ${{ matrix.os-version }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 14.x
       - run: npm install pm2@latest -g
       - run: npm install
       - run: npm test
   grpc:
-    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: grpc
     strategy:
       matrix:
-        node-version: [14.x]
+        os-version: [ ubuntu-latest, macos-latest ]
+    runs-on: ${{ matrix.os-version }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 14.x
       - run: npm install pm2@latest -g
       - run: npm i
       - run: ping -c 3 localhost
       - run: port=9090 pm2 start app.js --name grpc
       - run: npm test
   https:
+    strategy:
+      matrix:
+        os-version: [ ubuntu-latest, macos-latest ]
     runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: https
-    strategy:
-      matrix:
-        node-version: [14.x]
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm install pm2@latest -g
+          node-version: 14.x
       - run: npm i
       - run: npm test

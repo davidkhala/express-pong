@@ -15,8 +15,10 @@
     "url": "github.com/davidkhala/express-pong"
   },
   "devDependencies": {
+    "pm2": "latest",
     "khala-axios": "latest",
     "mocha": "latest-6",
-    "khala-light-util": "latest"
+    "khala-light-util": "latest",
+    "khala-pm2": "latest"
   }
 }
