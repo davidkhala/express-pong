@@ -3,15 +3,9 @@ const {axiosPromise} = require('khala-axios');
 const {sleep} = require('khala-light-util');
 const assert = require('assert');
 describe('http', function () {
-	this.timeout(3000);
+	this.timeout(0);
 	const port = 3000;
 	before(async () => {
-		execSync('pm2 --version');
-		try {
-			execSync('pm2 delete http');
-		} catch (e) {
-			console.error(e);
-		}
 		execSync(`port=${port} pm2 start app.js --name http`, {encoding: 'utf-8'});
 		await sleep(1000);
 	});
