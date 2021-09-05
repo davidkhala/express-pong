@@ -1,0 +1,22 @@
+name: TLS pong test
+
+on:
+  push:
+
+jobs:
+  https:
+    env:
+      port: 3443
+      fqdn: 140.238.194.116
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: https
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - run: npm i
+      - run: npm start
+      - run: npm test
