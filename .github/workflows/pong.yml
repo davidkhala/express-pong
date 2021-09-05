@@ -11,14 +11,16 @@ jobs:
     strategy:
       matrix:
         os-version: [ ubuntu-latest, macos-latest ]
+    env:
+      port: 3000
     runs-on: ${{ matrix.os-version }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: 14.x
-      - run: npm install pm2@latest -g
       - run: npm install
+      - run: npm start
       - run: npm test
   grpc:
     defaults:
@@ -50,6 +52,9 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: 14.x
+          node-version: 12.x
       - run: npm i
+      - run: npm install -g forever
+      - run: npm install pm2@latest -g
+      - run: port=3443 key=${PWD}/test/key.pem cert=${PWD}/test/cert.pem pm2 start app.js
       - run: npm test

@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/davidkhala/express-pong#readme",
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha test",
+    "start": "pm2 start app.js --name http"
   },
   "bin": {
     "pong-http": "app.js"
@@ -26,6 +27,7 @@
     "khala-nodeutils": "latest"
   },
   "devDependencies": {
+    "pm2": "latest",
     "khala-axios": "latest",
     "mocha": "latest",
     "khala-light-util": "latest"

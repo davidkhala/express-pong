@@ -34,5 +34,5 @@ if (process.version.match(/^(v10\.|v12\.|v14\.)/)) {
 const {app} = run(port, undefined, tlsOptions);
 app.get('/', (req, res) => {
 	console.info('get ping');
-	res.send('pong\n');
+	res.send('\npong\n');
 });
