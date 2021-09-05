@@ -41,6 +41,8 @@ jobs:
       - run: port=9090 pm2 start app.js --name grpc
       - run: npm test
   https:
+    env:
+      port: 3443
     strategy:
       matrix:
         os-version: [ ubuntu-latest, macos-latest ]
@@ -54,7 +56,5 @@ jobs:
         with:
           node-version: 12.x
       - run: npm i
-      - run: npm install -g forever
-      - run: npm install pm2@latest -g
-      - run: port=3443 key=${PWD}/test/key.pem cert=${PWD}/test/cert.pem pm2 start app.js
+      - run: npm start
       - run: npm test

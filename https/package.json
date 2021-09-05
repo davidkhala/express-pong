@@ -5,7 +5,8 @@
     "khala-nodeutils": "latest"
   },
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha test",
+    "start": "key=${PWD}/test/key.pem cert=${PWD}/test/cert.pem pm2 start app.js"
   },
   "bin": {
     "pong-https": "app.js"
