@@ -43,6 +43,7 @@ jobs:
   https:
     env:
       port: 3443
+      fqdn: 140.238.194.116
     strategy:
       matrix:
         os-version: [ ubuntu-latest, macos-latest ]

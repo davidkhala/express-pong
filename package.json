@@ -18,7 +18,7 @@
   "homepage": "https://github.com/davidkhala/express-pong#readme",
   "scripts": {
     "test": "mocha test",
-    "serve": "pm2 start app.js --name http",
+    "start": "pm2 start app.js --name http",
     "stop": "pm2 delete http"
   },
   "bin": {
