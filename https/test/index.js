@@ -11,7 +11,7 @@ describe('https', () => {
 		const url = `https://${domain}:${port}`;
 
 		const result = await axiosPromise({url, method: 'GET'}, {
-			ca: cert, rejectUnauthorized: false,
+			cert, rejectUnauthorized: false,
 		});
 		assert.strictEqual(result, '\npong\n');
 	});
