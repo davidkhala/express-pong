@@ -10,7 +10,7 @@ if (process.argv[2] === 'help') {
     `);
 	process.exit(0);
 }
-const {run} = require('khala-nodeutils/baseApp');
+const {run, express} = require('khala-nodeutils/baseApp');
 const port = process.env.port || 443;
 const {key, cert} = process.env;
 
@@ -32,6 +32,8 @@ if (process.version.match(/^(v10\.|v12\.|v14\.)/)) {
 }
 
 const {app} = run(port, undefined, tlsOptions);
+app.use(express.static('staticFiles'));
+
 app.get('/', (req, res) => {
 	console.info('get ping');
 	res.send('\npong\n');
