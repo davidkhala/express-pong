@@ -2,7 +2,7 @@ name: release latest
 
 on:
   workflow_run:
-    workflows: ["http", "https", "grpc"]
+    workflows: [ "pong test", "TLS pong test"]
     types:
       - completed
   workflow_dispatch:
@@ -15,6 +15,12 @@ jobs:
   build-and-push-image:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        working-directory: [ http, https, grpc ]
+    defaults:
+      run:
+        working-directory: ${{matrix.working-directory}}
     permissions:
       contents: read
       packages: write
