@@ -4,6 +4,7 @@ const path = require('path');
 const cert = path.resolve(__dirname, 'davidkhala.com/fullchain.cer');
 const port = process.env.port || 3443;
 const domain = process.env.fqdn || 'localhost';
+const rejectUnauthorized = !!process.env.fqdn;
 describe('https', () => {
 
 	it('ping express-pongs', async function () {
@@ -11,7 +12,7 @@ describe('https', () => {
 		const url = `https://${domain}:${port}`;
 		console.info(`targeting ${url}`);
 		const result = await axiosPromise({url, method: 'GET'}, {
-			cert
+			cert, rejectUnauthorized
 		});
 		assert.strictEqual(result, '\npong\n');
 	});

@@ -7,7 +7,7 @@ jobs:
   https:
     env:
       port: 3443
-      fqdn: 140.238.207.12
+#      fqdn: 140.238.207.12
     runs-on: ubuntu-latest
     defaults:
       run:
