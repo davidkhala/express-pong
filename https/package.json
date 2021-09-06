@@ -6,7 +6,8 @@
   },
   "scripts": {
     "test": "mocha test",
-    "start": "key=${PWD}/test/davidkhala.com/davidkhala.com.key cert=${PWD}/test/davidkhala.com/fullchain.cer pm2 start app.js --name https"
+    "start": "key=${PWD}/test/davidkhala.com/davidkhala.com.key cert=${PWD}/test/davidkhala.com/fullchain.cer pm2 start app.js --name https",
+    "self-signed": "port=5443 key=${PWD}/test/server.key cert=${PWD}/test/server.cert pm2 start app.js --name https-self"
   },
   "bin": {
     "pong-https": "app.js"
