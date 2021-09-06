@@ -12,7 +12,7 @@ if (process.argv[2] === 'help') {
 }
 const {run, express} = require('khala-nodeutils/baseApp');
 const port = process.env.port || 443;
-const {key, cert} = process.env;
+const {key, cert, ca} = process.env;
 
 if (!key) {
 	throw Error('Missing TLS Key file');
@@ -20,7 +20,7 @@ if (!key) {
 if (!cert) {
 	throw Error('Missing TLS Cert file');
 }
-const tlsOptions = {key, cert};
+const tlsOptions = {key, cert, ca};
 if (process.version.match(/^(v10\.|v12\.|v14\.)/)) {
 	const minVersion = 'TLSv1.2';
 	Object.assign(tlsOptions, {minVersion});

@@ -6,7 +6,7 @@
   },
   "scripts": {
     "test": "mocha test",
-    "start": "key=${PWD}/test/key.pem cert=${PWD}/test/cert.pem pm2 start app.js --name https"
+    "start": "key=${PWD}/test/davidkhala.com/davidkhala.com.key cert=${PWD}/test/davidkhala.com/fullchain.cer pm2 start app.js --name https"
   },
   "bin": {
     "pong-https": "app.js"
