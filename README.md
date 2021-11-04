@@ -12,7 +12,9 @@ docker run -p ${exposedPort}:${exposedPort} -e port=${exposedPort} ghcr.io/david
 ```
 ### As node process
 `port=<exposed-port> node app.js`
+Or with `nohup` to run in background
 
+`port=<exposed-port> nohup nodejs app.js &`
 ## Notes
 - ICMP has no ports and is neither TCP nor UDP. 
 > ICMP is IP protocol 1 (see RFC792), TCP is IP protocol 6 (described in RFC793) and UDP is IP protocol 17(see RFC768). 
