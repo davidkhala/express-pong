@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+import {run} from '@davidkhala/nodeutils/baseApp.js';
+import express from 'express';
+
 if (process.argv[2] === 'help') {
 	console.info(`
         environments:
@@ -10,7 +13,7 @@ if (process.argv[2] === 'help') {
     `);
 	process.exit(0);
 }
-const {run, express} = require('khala-nodeutils/baseApp');
+
 const port = process.env.port || 443;
 const {key, cert, ca} = process.env;
 

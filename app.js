@@ -10,7 +10,10 @@ if (process.argv[2] === 'help') {
 	process.exit(0);
 }
 
-const {run} = require('khala-nodeutils/baseApp');
+import {run} from '@davidkhala/nodeutils/baseApp.js';
+import applyTo from './extensions.js';
+import Catch from './catch.js';
+
 const port = process.env.port || 80;
 
 const {app} = run(port);
@@ -18,5 +21,5 @@ app.get('/', (req, res) => {
 	console.info(`\n from ${req.ip}`);
 	res.send('\npong\n');
 });
-require('./extensions')(app, process.env.extensions);
-require('./catch')(app);
+applyTo(app, process.env.extensions);
+Catch(app);

@@ -25,12 +25,13 @@
     "pong-http": "app.js"
   },
   "dependencies": {
-    "khala-nodeutils": "latest"
+    "@davidkhala/nodeutils": "latest"
   },
   "devDependencies": {
     "pm2": "latest",
     "khala-axios": "latest",
     "mocha": "latest",
-    "khala-light-util": "latest"
-  }
+    "@davidkhala/light": "latest"
+  },
+  "type": "module"
 }

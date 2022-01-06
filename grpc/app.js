@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-const {grpcServer, load} = require('khala-grpc');
-const path = require('path');
+import {grpcServer, load} from 'khala-grpc';
+import path from 'path';
 const pingProtoPath = path.resolve(__dirname, 'ping.proto');
 const {PingService: {service}} = load(pingProtoPath).object;
 const port = process.env.port || 9090;

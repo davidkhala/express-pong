@@ -1,4 +1,4 @@
-module.exports = (app) => {
+export default function (app) {
 	// error Handle middleware is order sensitive
 	// This should be last part of app
 	app.use((err, req, res, next) => {

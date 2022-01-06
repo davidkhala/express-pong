@@ -1,5 +1,5 @@
-const {axiosPromise} = require('khala-axios');
-const assert = require('assert');
+import {axiosPromise} from 'khala-axios';
+import assert from 'assert';
 describe('http', function () {
 	this.timeout(0);
 	const {port} = process.env;
