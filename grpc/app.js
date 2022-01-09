@@ -3,7 +3,7 @@ import {grpcServer, load} from 'khala-grpc';
 import path from 'path';
 const pingProtoPath = path.resolve(__dirname, 'ping.proto');
 const {PingService: {service}} = load(pingProtoPath).object;
-const port = process.env.port || 9090;
+const port = process.env.port || process.env.PORT || 9090;
 
 const services = [{
 	service,
