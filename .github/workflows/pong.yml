@@ -5,12 +5,9 @@ on:
 
 jobs:
   http:
-    strategy:
-      matrix:
-        os-version: [ ubuntu-latest, macos-latest ]
     env:
-      port: 3000
-    runs-on: ${{ matrix.os-version }}
+      PORT: 3000
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -18,22 +15,21 @@ jobs:
           node-version: 14.x
       - run: npm install
       - run: npm start
+      - run: ping -c 3 localhost
       - run: npm test
   grpc:
     defaults:
       run:
         working-directory: grpc
-    strategy:
-      matrix:
-        os-version: [ ubuntu-latest, macos-latest ]
-    runs-on: ${{ matrix.os-version }}
+    runs-on: ubuntu-latest
+    env:
+      PORT: 9090
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: 14.x
-      - run: npm install pm2@latest -g
       - run: npm i
+      - run: npm start
       - run: ping -c 3 localhost
-      - run: port=9090 pm2 start app.js --name grpc
       - run: npm test

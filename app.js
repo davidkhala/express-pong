@@ -14,7 +14,7 @@ import {run} from '@davidkhala/nodeutils/baseApp.js';
 import applyTo from './extensions.js';
 import Catch from './catch.js';
 
-const port = process.env.port || process.env.PORT || 80;
+const port = process.env.PORT || 80;
 
 const {app} = run(port);
 app.get('/', (req, res) => {

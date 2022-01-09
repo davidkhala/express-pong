@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 import {grpcServer, load} from 'khala-grpc';
 import path from 'path';
+import {filedirname} from '@davidkhala/light/es6.mjs';
+filedirname(import.meta)
 const pingProtoPath = path.resolve(__dirname, 'ping.proto');
 const {PingService: {service}} = load(pingProtoPath).object;
-const port = process.env.port || process.env.PORT || 9090;
+const port = process.env.PORT || 9090;
 
 const services = [{
 	service,

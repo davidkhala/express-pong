@@ -1,8 +1,10 @@
 import assert from 'assert';
 import {axiosPromise} from 'khala-axios';
 import path from 'path';
+import {filedirname} from '@davidkhala/light/es6.mjs';
+filedirname(import.meta)
 const cert = path.resolve(__dirname, 'davidkhala.com/fullchain.cer');
-const port = process.env.port || 3443;
+const port = 3443;
 describe('https', () => {
 
 	it('ping express-pongs', async function () {

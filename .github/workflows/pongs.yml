@@ -5,8 +5,7 @@ on:
 
 jobs:
   https:
-    env:
-      port: 3443
+
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -18,5 +17,10 @@ jobs:
           node-version: 14.x
       - run: npm i
       - run: npm start
+        env:
+          PORT: 3443
       - run: npm run self-signed
+        env:
+          PORT: 5443
+      - run: ping -c 3 localhost
       - run: npm test

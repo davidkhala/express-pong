@@ -8,12 +8,12 @@ nothing but a node server response ping.
 ### As Docker container
 ``` 
 export exposedPort=<exposed-port>
-docker run -p ${exposedPort}:${exposedPort} -e port=${exposedPort} ghcr.io/davidkhala/express-pong
+docker run -p ${exposedPort}:${PORT} -e PORT=${PORT} ghcr.io/davidkhala/express-pong
 ```
 ### As node process
-- `port=<exposed-port> node app.js`
+- `PORT=<port> node app.js`
 - Or with `nohup` to run in background
-   - `port=<exposed-port> nohup nodejs app.js &`
+   - `PORT=<port> nohup nodejs app.js &`
 
 ## Notes
 - ICMP has no ports and is neither TCP nor UDP. 

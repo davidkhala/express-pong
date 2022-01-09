@@ -14,7 +14,7 @@ if (process.argv[2] === 'help') {
 	process.exit(0);
 }
 
-const port = process.env.port || process.env.PORT || 443;
+const port = process.env.PORT || 443;
 const {key, cert, ca} = process.env;
 
 if (!key) {

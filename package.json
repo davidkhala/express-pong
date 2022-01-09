@@ -19,7 +19,7 @@
   "scripts": {
     "test": "mocha test",
     "start": "pm2 start app.js --name http",
-    "stop": "pm2 delete http"
+    "stop": "pm2 delete all"
   },
   "bin": {
     "pong-http": "app.js"
@@ -30,8 +30,7 @@
   "devDependencies": {
     "pm2": "latest",
     "khala-axios": "latest",
-    "mocha": "latest",
-    "@davidkhala/light": "latest"
+    "mocha": "latest"
   },
   "type": "module"
 }
