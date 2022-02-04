@@ -5,7 +5,7 @@ import express from 'express';
 if (process.argv[2] === 'help') {
 	console.info(`
         environments:
-            [port]  : default to 443
+            [PORT]  : default to 443
             key     : Required. TLS Key file path
             cert    : Required. TLS Cert file path
         Example:
