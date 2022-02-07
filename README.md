@@ -8,7 +8,7 @@ nothing but a node server response ping.
 ### As Docker container
 ``` 
 export exposedPort=<exposed-port>
-docker run -p ${exposedPort}:${PORT} -e PORT=${PORT} ghcr.io/davidkhala/express-pong
+docker run -p ${exposedPort}:${PORT} -e PORT=${PORT} ghcr.io/davidkhala/<http|https|grpc>
 ```
 ### As node process
 - `PORT=<port> node app.js`
