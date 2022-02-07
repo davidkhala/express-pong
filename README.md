@@ -1,8 +1,6 @@
 # express-pong
 nothing but a node server response ping.
 
-[![test](https://github.com/davidkhala/express-pong/actions/workflows/pong.yml/badge.svg)](https://github.com/davidkhala/express-pong/actions/workflows/pong.yml)
-
 ## Run
 
 ### As Docker container

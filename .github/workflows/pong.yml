@@ -5,14 +5,15 @@ on:
 
 jobs:
   http:
+    defaults:
+      run:
+        working-directory: http
     env:
       PORT: 3000
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 14.x
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
       - run: npm install
       - run: npm start
       - run: ping -c 3 localhost
@@ -25,10 +26,8 @@ jobs:
     env:
       PORT: 9090
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 14.x
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
       - run: npm i
       - run: npm start
       - run: ping -c 3 localhost
