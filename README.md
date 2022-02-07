@@ -14,7 +14,9 @@ Or try
 - ghcr.io/davidkhala/https
 - ghcr.io/davidkhala/grpc
 ### As node process
-`cd <http|https|grpc>`
+```
+cd http|https|grpc
+```
 - `PORT=<port> node app.js`
 - Or with `nohup` to run in background
    - `PORT=<port> nohup nodejs app.js &`

@@ -44,7 +44,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@master
         with:
-          context: .
+          context: ${{matrix.working-directory}}
           push: true
           tags: ${{ env.REGISTRY }}/${{ github.repository_owner }}/${{ matrix.working-directory }}
           labels: ${{ steps.meta.outputs.labels }}
