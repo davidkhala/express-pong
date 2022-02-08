@@ -11,7 +11,6 @@ const services = [{
 	service,
 	implementation: {
 		ping: (req, callBack) => {
-			console.log(req);
 			const err = undefined;
 			callBack(err, {data: 'pong', errCode: 'success'});
 		}
