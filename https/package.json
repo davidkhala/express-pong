@@ -5,10 +5,7 @@
     "@davidkhala/nodeutils": "latest"
   },
   "scripts": {
-    "test": "mocha test",
-    "start": "key=${PWD}/test/davidkhala.com/davidkhala.com.key cert=${PWD}/test/davidkhala.com/fullchain.cer pm2 start app.js --name https",
-    "stop": "pm2 delete all",
-    "self-signed": "key=${PWD}/test/server.key cert=${PWD}/test/server.cert pm2 start app.js --name https-self"
+    "test": "mocha test"
   },
   "bin": {
     "pong-https": "app.js"
@@ -20,7 +17,6 @@
   "devDependencies": {
     "khala-axios": "latest",
     "mocha": "latest",
-    "pm2": "latest",
     "@davidkhala/light": "latest"
   },
   "type": "module"
