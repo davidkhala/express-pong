@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
       - run: npm i
-      - run: nohup key=${PWD}/test/davidkhala.com/davidkhala.com.key cert=${PWD}/test/davidkhala.com/fullchain.cer node app.js &
+      - run: nohup key=${PWD}/test/davidkhala.com/ap-singapore-1.ping.davidkhala.com.key cert=${PWD}/test/davidkhala.com/fullchain.cer node app.js &
         env:
           PORT: 3443
       - run: nohup key=${PWD}/test/server.key cert=${PWD}/test/server.cert node app.js &
