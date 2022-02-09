@@ -3,4 +3,5 @@ FROM node
 COPY . .
 
 RUN npm install
+VOLUME ["/etc/key", "/etc/fullchain.cer"]
 CMD [ "node", "app.js"]
