@@ -1,23 +1,7 @@
 # express-pong
 nothing but a node server response ping.
 
-## Run
 
-### As Docker container
-``` 
-export exposedPort=<exposed-port>
-docker run -p ${exposedPort}:${PORT} -e PORT=${PORT} ghcr.io/davidkhala/http
-```
-Or try 
-- ghcr.io/davidkhala/https
-- ghcr.io/davidkhala/grpc
-### As node process
-```
-cd http|https|grpc
-```
-- `PORT=<port> node app.js`
-- Or with `nohup` to run in background
-   - `PORT=<port> nohup nodejs app.js &`
 
 ## Notes
 - ICMP has no ports and is neither TCP nor UDP. 

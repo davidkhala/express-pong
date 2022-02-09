@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import {run} from '@davidkhala/nodeutils/baseApp.js';
 import express from 'express';
+import fs from 'fs';
 
 if (process.argv[2] === 'help') {
 	console.info(`
@@ -15,14 +16,8 @@ if (process.argv[2] === 'help') {
 }
 
 const port = process.env.PORT || 443;
-const {key, cert, ca} = process.env;
+const {key = 'server.key', cert = 'fullchain.cer', ca} = process.env;
 
-if (!key) {
-	throw Error('Missing TLS Key file');
-}
-if (!cert) {
-	throw Error('Missing TLS Cert file');
-}
 const tlsOptions = {key, cert, ca};
 if (process.version.match(/^(v10\.|v12\.|v14\.)/)) {
 	const minVersion = 'TLSv1.2';
