@@ -1,4 +1,4 @@
-import {grpcRequest} from 'khala-grpc';
+import {grpcRequest} from '@davidkhala/grpc';
 import path from 'path';
 import {filedirname} from '@davidkhala/light/es6.mjs';
 filedirname(import.meta)

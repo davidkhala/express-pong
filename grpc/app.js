@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import {grpcServer, load} from 'khala-grpc';
+import {grpcServer, load} from '@davidkhala/grpc';
 import path from 'path';
 import {filedirname} from '@davidkhala/light/es6.mjs';
 filedirname(import.meta)

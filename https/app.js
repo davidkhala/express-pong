@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import {run} from '@davidkhala/nodeutils/baseApp.js';
 import express from 'express';
-import fs from 'fs';
+import path from 'path';
 
 if (process.argv[2] === 'help') {
 	console.info(`
@@ -16,7 +16,7 @@ if (process.argv[2] === 'help') {
 }
 
 const port = process.env.PORT || 443;
-const {key = 'server.key', cert = 'fullchain.cer', ca} = process.env;
+const {key = path.resolve('server.key'), cert = path.resolve('fullchain.cer'), ca} = process.env;
 
 const tlsOptions = {key, cert, ca};
 if (process.version.match(/^(v10\.|v12\.|v14\.)/)) {
