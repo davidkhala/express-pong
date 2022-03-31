@@ -12,4 +12,4 @@ cd http
 ```
 - `PORT=<port> node app.js`
 - Or with `nohup` to run in background
-    - `PORT=<port> nohup nodejs app.js &`
+    - `PORT=<port> nohup node app.js &`
