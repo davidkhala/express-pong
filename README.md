@@ -1,5 +1,5 @@
 # express-pong
-nothing but a node server response ping.
+nothing but some node servers response ping.
 
 
  
