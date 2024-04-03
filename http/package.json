@@ -19,7 +19,7 @@
   "scripts": {
     "test": "mocha test",
     "start": "pm2 start app.js --name http",
-    "stop": "pm2 delete all"
+    "stop": "pm2 delete http"
   },
   "bin": {
     "pong-http": "app.js"

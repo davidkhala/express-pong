@@ -5,7 +5,11 @@
     "@davidkhala/nodeutils": "latest"
   },
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha test",
+    "start": "cross-env PORT=3443 key=./test/davidkhala.com/ap-singapore-1.ping.davidkhala.com.key cert=./test/davidkhala.com/fullchain.cer pm2 start app.js --name https",
+    "poststart": "cross-env PORT=5443 key=./test/server.key cert=./test/server.cert pm2 start app.js --name https-self",
+    "stop": "pm2 delete https",
+    "poststop": "pm2 delete https-self"
   },
   "bin": {
     "pong-https": "app.js"
@@ -15,9 +19,11 @@
     "url": "github.com/davidkhala/express-pong"
   },
   "devDependencies": {
-    "khala-axios": "latest",
+    "@davidkhala/axios": "latest",
     "mocha": "latest",
-    "@davidkhala/light": "latest"
+    "@davidkhala/light": "latest",
+    "pm2": "latest",
+    "cross-env": "latest"
   },
   "type": "module"
 }

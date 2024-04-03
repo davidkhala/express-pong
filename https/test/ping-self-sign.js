@@ -1,7 +1,7 @@
 import assert from 'assert';
-import {axiosPromise} from 'khala-axios';
-import {filedirname} from "@davidkhala/light/es6.mjs"
 import path from 'path';
+import {axiosPromise} from '@davidkhala/axios/index.js';
+import {filedirname} from "@davidkhala/light/es6.mjs"
 filedirname(import.meta)
 const cert = path.resolve(__dirname, 'server.cert');
 const port = 5443;

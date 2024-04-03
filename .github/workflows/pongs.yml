@@ -13,12 +13,6 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
       - run: npm i
-      - run: echo ${PWD}
-      - run: key=${PWD}/test/davidkhala.com/ap-singapore-1.ping.davidkhala.com.key cert=${PWD}/test/davidkhala.com/fullchain.cer nohup node app.js &
-        env:
-          PORT: 3443
-      - run: key=${PWD}/test/server.key cert=${PWD}/test/server.cert nohup node app.js &
-        env:
-          PORT: 5443
+      - run: npm start
       - run: ping -c 3 localhost
       - run: npm test

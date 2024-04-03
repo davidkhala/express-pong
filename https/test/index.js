@@ -1,5 +1,5 @@
 import assert from 'assert';
-import {axiosPromise} from 'khala-axios';
+import {axiosPromise} from '@davidkhala/axios/index.js';
 import path from 'path';
 import {filedirname} from '@davidkhala/light/es6.mjs';
 filedirname(import.meta)
