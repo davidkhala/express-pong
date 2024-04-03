@@ -1,4 +1,4 @@
-import {axiosPromise} from 'khala-axios';
+import {axiosPromise} from '@davidkhala/axios';
 import assert from 'assert';
 describe('http', function () {
 	this.timeout(0);
