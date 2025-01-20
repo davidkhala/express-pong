@@ -7,9 +7,6 @@ on:
       - completed
   workflow_dispatch:
 
-env:
-  REGISTRY: ghcr.io
-
 jobs:
   build-and-push-image:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
@@ -17,9 +14,7 @@ jobs:
     strategy:
       matrix:
         working-directory: [ http, https, grpc ]
-    defaults:
-      run:
-        working-directory: ${{matrix.working-directory}}
+  
     permissions:
       contents: read
       packages: write
@@ -27,24 +22,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@master
-
-      - name: Log in to the Container registry
-        uses: docker/login-action@master
+      - uses: davidkhala/build-push-action@main
         with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          working-directory: ${{matrix.working-directory}} 
+          password: ${{secrets.GITHUB_TOKEN}}
+          image: ${{matrix.working-directory}} 
 
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
-        uses: docker/metadata-action@master
-        with:
-          images: ${{ env.REGISTRY }}/${{ github.repository_owner }}/${{ matrix.working-directory }}
-
-      - name: Build and push Docker image
-        uses: docker/build-push-action@master
-        with:
-          context: ${{matrix.working-directory}}
-          push: true
-          tags: ${{ env.REGISTRY }}/${{ github.repository_owner }}/${{ matrix.working-directory }}
-          labels: ${{ steps.meta.outputs.labels }}
