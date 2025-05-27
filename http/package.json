@@ -29,9 +29,11 @@
     "@davidkhala/nodeutils": "latest"
   },
   "devDependencies": {
-    "pm2": "latest",
     "@davidkhala/axios": "latest",
-    "mocha": "latest"
+    "@testcontainers/mockserver": "^10.28.0",
+    "mocha": "latest",
+    "mockserver-node": "latest",
+    "pm2": "latest"
   },
   "type": "module"
 }
