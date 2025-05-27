@@ -1,6 +1,6 @@
 {
   "name": "express-pong",
-  "version": "1.2.5",
+  "version": "1.2.7",
   "description": "minimum ping-pong server",
   "repository": {
     "type": "git",
@@ -31,8 +31,7 @@
   "devDependencies": {
     "pm2": "latest",
     "@davidkhala/axios": "latest",
-    "mocha": "latest",
-    "nexe": "latest"
+    "mocha": "latest"
   },
   "type": "module"
 }
