@@ -1,8 +1,11 @@
 import {MockserverContainer} from '@testcontainers/mockserver'
 
 export class Controller {
-    constructor() {
+    constructor(tls) {
         this.container = new MockserverContainer("mockserver/mockserver:5.15.0")
+        if(tls){
+            this.container.withEnvironment('MOCKSERVER_PROACTIVELY_INITIALISE_TLS=true')
+        }
     }
 
     async start() {
